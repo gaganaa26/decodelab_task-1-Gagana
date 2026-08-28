@@ -1,0 +1,354 @@
+/* ==========================================================================
+   DECODELABS PROJECT 1: RESPONSIVE ARCHITECTURE
+   Theme: Warm & Grounded Aesthetics (2025/2026 Palette)
+   ========================================================================== */
+
+/* --- 1. CSS VARIABLES & RESET --- */
+:root {
+  /* Decode Labs Color Palette */
+  --mocha-mousse: #A07855;
+  --mocha-mousse-dark: #7A593C;
+  --ethereal-blue: #A4D4E0;
+  --moonlit-grey: #F2F0EA;
+  --text-color: #2D2D2D;
+  --white: #FFFFFF;
+  
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Layout Spacing */
+  --container-width: 1100px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--moonlit-grey);
+  line-height: 1.6;
+}
+
+/* --- 2. LAYOUT & CONTAINERS --- */
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* --- 3. STICKY NAVBAR (Flexbox) --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--mocha-mousse);
+}
+
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.nav-menu {
+  display: none; /* Hidden on mobile by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  border-top: 1px solid #E5E5E5;
+}
+
+.nav-menu.active {
+  display: block;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 1rem 5%;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-menu li a:hover {
+  background-color: var(--moonlit-grey);
+  color: var(--mocha-mousse);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero {
+  background: linear-gradient(135deg, var(--mocha-mousse) 0%, var(--mocha-mousse-dark) 100%);
+  color: var(--white);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--ethereal-blue);
+  color: var(--text-color);
+}
+
+.btn-primary:hover {
+  background-color: #8CC4D2;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--mocha-mousse-dark);
+}
+
+/* --- 5. ABOUT SECTION --- */
+.about-section {
+  text-align: center;
+  background-color: var(--white);
+}
+
+.about-section h2, .menu-section h2, .testimonials-section h2, .contact-section h2 {
+  font-family: var(--font-heading);
+  color: var(--mocha-mousse-dark);
+  margin-bottom: 1rem;
+}
+
+/* --- 6. MENU SECTION (CSS Grid) --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+  transition: var(--transition);
+  border-left: 4px solid var(--mocha-mousse);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--ethereal-blue);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.card .price {
+  display: block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--mocha-mousse-dark);
+  margin: 1rem 0;
+}
+
+.btn-card {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: var(--mocha-mousse);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-card:hover {
+  background-color: var(--mocha-mousse-dark);
+}
+
+/* --- 7. TESTIMONIALS SECTION --- */
+.testimonials-section {
+  background-color: var(--white);
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial {
+  background-color: var(--moonlit-grey);
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.testimonial cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--mocha-mousse);
+}
+
+/* --- 8. CONTACT FORM --- */
+.contact-form {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  font-family: var(--font-body);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--mocha-mousse);
+}
+
+/* --- 9. FOOTER --- */
+.site-footer {
+  background-color: var(--mocha-mousse-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* --- 10. MEDIA QUERIES (Mobile-First Expansion) --- */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+
+  .nav-menu {
+    display: block;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    border: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .nav-menu li a {
+    padding: 0.5rem 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns for Tablets */
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns for Desktop */
+  }
+}

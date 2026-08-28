@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma Blend | Modern Coffee House</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="logo">☕ Aroma Blend</div>
+    
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Handcrafted Coffee, Grounded in Passion</h1>
+      <p>Experience warm aesthetics and rich, artisanal brews crafted daily.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn btn-secondary">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Our Craft</h2>
+        <p>At Aroma Blend, we source ethically grown beans from sustainable farms worldwide. Every cup is meticulously roasted and brewed to perfection by master baristas.</p>
+      </div>
+    </section>
+
+    <!-- Menu Section (CSS Grid) -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2>Our Popular Brews</h2>
+        <div class="menu-grid">
+          
+          <article class="card">
+            <div class="card-badge">Best Seller</div>
+            <h3>Mocha Mousse Latte</h3>
+            <p>Espresso blended with velvety chocolate mousse and steamed oat milk.</p>
+            <span class="price">$5.50</span>
+            <button class="btn-card">Order Now</button>
+          </article>
+
+          <article class="card">
+            <h3>Ethereal Cold Brew</h3>
+            <p>Steeped for 18 hours with subtle floral and citrus tasting notes.</p>
+            <span class="price">$4.75</span>
+            <button class="btn-card">Order Now</button>
+          </article>
+
+          <article class="card">
+            <h3>Caramel Macchiato</h3>
+            <p>Rich espresso layered over vanilla syrup, topped with caramel drizzle.</p>
+            <span class="price">$5.25</span>
+            <button class="btn-card">Order Now</button>
+          </article>
+
+          <article class="card">
+            <h3>Artisanal Croissant</h3>
+            <p>Flaky, buttered pastry freshly baked in-house every morning.</p>
+            <span class="price">$3.80</span>
+            <button class="btn-card">Order Now</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <h2>What Our Guests Say</h2>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial">
+            <p>"The best cold brew in town! The atmosphere is super cozy and warm."</p>
+            <cite>— Sarah M.</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Amazing aesthetic, fast WiFi, and top-tier coffee. My default workspace."</p>
+            <cite>— Alex R.</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required placeholder="Gagana K">
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" required placeholder="gagana@example.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required placeholder="Reserve a table or ask a question..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Aroma Blend. Powered by DecodeLabs Internship Program.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
